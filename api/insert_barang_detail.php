@@ -63,7 +63,7 @@ try {
     $stmtStok = $conn->prepare("SELECT stok FROM tbl_master_material WHERE nomer_material = ?");
     $stmtStok->execute([$nomor_material]);
     $rowStok = $stmtStok->fetch(PDO::FETCH_ASSOC);
-    $persediaan_awal = $rowStok ? (float)$rowStok['stok'] : 0;
+
 
     // 5. Defaults and Calculations
     $persediaan_akhir = $persediaan_awal + $mutasi_masuk - $mutasi_keluar;
